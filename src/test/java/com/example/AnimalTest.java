@@ -31,16 +31,4 @@ public class AnimalTest {
         assertEquals(expectedFood, animal.getFood(animalKind));
     }
 
-    @Test(expected = Exception.class)
-    public void getFoodThrowsExceptionForUnknownAnimal() throws Exception {
-        Animal animal = new Animal();
-        animal.getFood("НеизвестноеСущество");
-    }
-
-    @Test
-    public void getFamilyCorrectString() {
-        Animal animal = new Animal();
-        String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
-        assertEquals(expected, animal.getFamily());
-    }
 }

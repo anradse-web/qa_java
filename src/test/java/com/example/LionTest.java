@@ -13,7 +13,7 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void  getKittens() throws Exception {
+    public void getKittens() throws Exception {
         Mockito.when(feline.getKittens()).thenReturn(1);
 
         Lion lion = new Lion("Самец", feline);
@@ -21,6 +21,7 @@ public class LionTest {
 
         assertEquals(1, actualKittens);
     }
+
     @Test
     public void getFoodPredatorFoodList() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
@@ -32,8 +33,11 @@ public class LionTest {
         assertEquals(expectedFood, actualFood);
     }
 
-
-
-
-
+    @Test
+    public void doesHaveManeTest() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        boolean expectedHaveMane = true;
+        boolean actualHaveMane = lion.doesHaveMane();
+        assertEquals("У самца пропала грива", actualHaveMane, expectedHaveMane);
+    }
 }
