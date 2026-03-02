@@ -33,11 +33,8 @@ public class LionTest {
         assertEquals(expectedFood, actualFood);
     }
 
-    @Test
-    public void doesHaveManeTest() throws Exception {
-        Lion lion = new Lion("Самец", feline);
-        boolean expectedHaveMane = true;
-        boolean actualHaveMane = lion.doesHaveMane();
-        assertEquals("У самца пропала грива", actualHaveMane, expectedHaveMane);
+    @Test(expected = Exception.class)
+    public void constructorThrowsExceptionOnInvalidSex() throws Exception {
+        new Lion("Неизвестно", feline);
     }
 }
